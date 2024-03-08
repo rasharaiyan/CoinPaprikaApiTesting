@@ -4,6 +4,10 @@ from logic.ListCoins import ListCoins
 from tests.test_utils import TestBase
 
 class TestListCoins(TestBase):
+    @classmethod
+    def setUpClass(cls):
+        super().setUpClass()
+        cls.service = ListCoins(APIWrapper("https://api.coinpaprika.com", None))
 
     def test_list_coins(self):
         response = self.service.list_coins()
