@@ -23,4 +23,3 @@ class TestGetCoinByID(TestBase):
         self.assertIsInstance(response['is_new'], bool)
         self.assertIsInstance(response['is_active'], bool)
         self.assertIn(response['type'], ['coin', 'token'])
-        # Additional checks based on response schema
