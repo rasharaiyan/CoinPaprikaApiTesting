@@ -10,7 +10,9 @@ class TestListTags(TestBase):
         super().setUpClass()
         cls.service = ListTags(APIWrapper("https://api.coinpaprika.com", None))
 
+
     def test_list_tags(self):
+        #Returns basic information about cryptocurrencies tags (categories)
         response = self.service.list_tags()
         self.assertIsInstance(response, list)
         for tag in response:
