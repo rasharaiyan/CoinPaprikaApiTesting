@@ -16,6 +16,7 @@ class TestGetCoinByID(TestBase):
     def test_get_coin_by_id(self):
         coin_id = 'btc-bitcoin'
         response = self.service.get_coin_by_id(coin_id)
+        print("Response:", response)  # Print the response to the console
         self.assertEqual(response['id'], coin_id)
         self.assertIsInstance(response['name'], str)
         self.assertIsInstance(response['symbol'], str)

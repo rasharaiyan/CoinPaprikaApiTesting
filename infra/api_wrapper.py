@@ -1,7 +1,6 @@
 import requests
 
 class APIWrapper:
-
     def __init__(self, base_url, api_key):
         self.BASE_URL = base_url
         self.headers = {'Authorization': api_key}

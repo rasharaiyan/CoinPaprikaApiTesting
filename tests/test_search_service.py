@@ -13,6 +13,7 @@ class TestSearchService(TestBase):
 
     def test_search(self):
         response = self.service.search('btc')
+        print("Response:", response)  # Print the response to the console
         for category in ['currencies', 'icos', 'exchanges', 'people', 'tags']:
             self.assertIn(category, response)
             self.assertIsInstance(response[category], list)

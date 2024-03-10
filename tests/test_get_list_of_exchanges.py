@@ -12,6 +12,7 @@ class TestListExchanges(TestBase):
 
     def test_list_exchanges(self):
         response = self.service.list_exchanges()
+        print("Response:", response)  # Print the response to the console
         self.assertIsInstance(response, list)
         for exchange in response:
             self.assertIsInstance(exchange['id'], str)

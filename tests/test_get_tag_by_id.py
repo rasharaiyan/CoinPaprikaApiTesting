@@ -12,6 +12,7 @@ class TestGetTagById(TestBase):
     def test_get_tag_by_id(self):
         tag_id = 'blockchain-service'
         response = self.service.get_tag_by_id(tag_id)
+        print("Response:", response)  # Print the response to the console
         self.assertEqual(response['id'], tag_id)
         self.assertIsInstance(response['name'], str)
         self.assertIsInstance(response['coin_counter'], int)

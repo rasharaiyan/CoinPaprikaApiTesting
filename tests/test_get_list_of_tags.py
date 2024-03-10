@@ -14,6 +14,7 @@ class TestListTags(TestBase):
     def test_list_tags(self):
         #Returns basic information about cryptocurrencies tags (categories)
         response = self.service.list_tags()
+        print("Response:", response)  # Print the response to the console
         self.assertIsInstance(response, list)
         for tag in response:
             self.assertIsInstance(tag['id'], str)
