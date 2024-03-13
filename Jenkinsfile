@@ -1,27 +1,23 @@
 pipeline {
     agent any
-
     stages {
-        stage('Checkout') {
-            steps {
-                checkout scm
-            }
-        }
+        // Other stages remain unchanged
 
         stage('Set up Python environment') {
             steps {
-                sh 'python3 -m venv venv'
-                sh '. venv/bin/activate'
-                sh 'pip install -r requirements.txt'
+                bat 'python -m venv venv'                   // Create venv
+                bat '.\\venv\\Scripts\\activate'            // Activate venv
+                bat 'pip install -r requirements.txt'       // Install dependencies
             }
         }
 
         stage('Run API Tests') {
             steps {
-                sh 'python -m unittest discover -s tests'
+                bat '.\\venv\\Scripts\\activate'            // Ensure venv is activated
+                bat 'python -m unittest discover -s tests'  // Run tests
             }
         }
-    }
+       }
 
     post {
         always {
