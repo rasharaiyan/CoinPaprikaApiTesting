@@ -5,7 +5,7 @@ pipeline {
         stage('Setup Environment') {
             steps {
                 echo 'Setting up Python environment...'
-                bat 'C:\Users\rasha\AppData\Local\Microsoft\WindowsApps\pip.exe install selenium requests'
+                bat 'C:\Users\rasha\AppData\Local\pip install selenium requests'
             }
         }
 
