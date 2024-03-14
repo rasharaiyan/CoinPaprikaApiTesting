@@ -24,5 +24,7 @@ jobs:
 
     - name: Run tests
       run: |
+        cd infra
+        cd logic
         cd tests
         python test_runner.py
