@@ -9,12 +9,5 @@ pipeline {
 
             }
         }
-
-        stage('Deploy') {
-            steps {
-                echo 'Deploying..'
-                // Your deployment steps here
-            }
-        }
     }
 }
