@@ -9,16 +9,15 @@ pipeline {
                 }
             }
         }
-    }
-
 
         stage('Test') {
             steps {
                 script {
-                    docker.run("my-python-app:test", "python -m tests.test_runner")
+                    docker.image("my-python-app:test").inside {
+                        sh "python -m tests.test_runner"
+                    }
                 }
             }
         }
-
+    }
 }
-
