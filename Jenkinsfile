@@ -19,7 +19,7 @@ pipeline {
         stage('Test') {
             steps {
                 echo 'Testing..'
-                bat 'C:\Users\rasha\AppData\Local\Microsoft\WindowsApps\python.exe -m testing_layer.api_tests.password_tests_api'
+                bat 'C:\Users\rasha\AppData\Local\Programs\Python\Python312\python.exe -m testing_layer.api_tests.password_tests_api'
             }
         }
 
