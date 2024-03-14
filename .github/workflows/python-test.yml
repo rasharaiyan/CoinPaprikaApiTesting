@@ -7,6 +7,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
       name: Checkout code
+
     - name: Set up Python
       uses: actions/setup-python@v2
       with:
@@ -22,9 +23,9 @@ jobs:
       with:
         chrome-version: latest
 
+    - name: Set PYTHONPATH
+      run: echo "PYTHONPATH=${{ github.workspace }}" >> $GITHUB_ENV
+
     - name: Run tests
-      run: |
-        cd infra
-        cd logic
-        cd tests
-        python test_runner.py
+      run: python test_runner.py
+      working-directory: ./tests
