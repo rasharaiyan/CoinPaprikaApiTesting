@@ -1,22 +1,19 @@
 pipeline {
     agent any
+
     stages {
-        stage('Build Docker Image') {
+        stage('Test') {
             steps {
-                script {
-                    def customImage = docker.build("my-python-app:test")
-                    customImage.push()
-                }
+                echo 'Testing..'
+                bat 'C:\\Users\\rasha\\AppData\\Local\\Programs\\Python\\Python312\\python.exe -m tests.test_runner'
+
             }
         }
 
-        stage('Test') {
+        stage('Deploy') {
             steps {
-                script {
-                    docker.image("my-python-app:test").inside {
-                        sh "python -m tests.test_runner"
-                    }
-                }
+                echo 'Deploying..'
+                // Your deployment steps here
             }
         }
     }
