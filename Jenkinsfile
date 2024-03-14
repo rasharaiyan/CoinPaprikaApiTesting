@@ -1,14 +1,16 @@
 pipeline {
     agent any
-
     stages {
         stage('Build Docker Image') {
             steps {
                 script {
-                    docker.build("my-python-app:test").push()
+                    def customImage = docker.build("my-python-app:test")
+                    customImage.push()
                 }
             }
         }
+    }
+}
 
         stage('Test') {
             steps {
