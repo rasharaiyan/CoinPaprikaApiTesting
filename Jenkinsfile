@@ -19,7 +19,7 @@ pipeline {
         stage('Test') {
             steps {
                 echo 'Testing..'
-                bat 'C:\\Users\\rasha\\AppData\\Local\\Programs\\Python\\Python312\\python.exe -m tests.test_get_coin_by_id.py'
+                bat 'C:\\Users\\rasha\\AppData\\Local\\Programs\\Python\\Python312\\python.exe -m tests.test_get_coin_by_id'
 
             }
         }
