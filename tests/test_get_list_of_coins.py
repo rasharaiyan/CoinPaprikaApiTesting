@@ -32,4 +32,3 @@ class TestListCoins(TestBase):
             self.assertIsInstance(coin['rank'], int)
             self.assertIsInstance(coin['is_new'], bool)
             self.assertIsInstance(coin['is_active'], bool)
-
