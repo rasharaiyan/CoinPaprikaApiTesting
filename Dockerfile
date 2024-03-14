@@ -11,4 +11,4 @@ COPY . .
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Run test_runner.py when the container launches
-CMD ["python", "./tests/test_runner.py"]
+CMD ["python", "./api_tests/test_runner.py"]
